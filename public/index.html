@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>PureCSS Dialog</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/pcss-dialog.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#dialog-1">Dialog shown by changing location.hash</a>
+                </li>
+                <li>
+                    <a href="#dialog-2">"Modal" dialog with overlay</a>
+                </li>
+                <li>
+                    <label for="dialog-3-toggler">Dialog toggled by hidden chekbox toggler</label>
+                </li>
+                <li>
+                    <a href="#dialog-4">Dialog positioned to top right</a>
+                </li>
+                <li>
+                    <a href="#dialog-5">"Tall" dialog</a>
+                </li>
+                <li>
+                    <a href="#dialog-6">Animated dialog</a>
+                </li>
+                <li>
+                    <a id="togg-1" href="#dialog-7">Dialog toggled with just a hint javascript</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function(){
+                var el = document.getElementById('togg-1');
+                var closeEl = document.querySelectorAll('#dialog-7 .pcss-dialog-close')[0];
+
+                var listener = function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll(el.getAttribute('href'))[0].classList.toggle("pcss-dialog-visible");
+                };
+
+                closeEl.addEventListener('click', listener, false);
+                el.addEventListener('click', listener, false);
+            });
+
+        </script>
+
+
+        <div role="dialog" id="dialog-1" class="pcss-dialog"><!--
+            --><div class="pcss-dialog-content">
+                Dialog shown by changing location.hash
+            </div><!--
+            --><a href="#!" class="pcss-dialog-close">
+                    ×
+            </a>
+        </div>
+
+
+        <div role="dialog" id="dialog-2" class="pcss-dialog pcss-modal"><!--
+            --><div class="pcss-dialog-content">
+                "Modal" dialog with overlay
+            </div><!--
+            --><a href="#!" class="pcss-dialog-close">
+                    ×
+            </a>
+        </div>
+
+        <input type="checkbox" id="dialog-3-toggler" class="pcss-dialog-toggler" />
+        <div role="dialog" class="pcss-dialog"><!--
+            --><div class="pcss-dialog-content">
+                "Modal" toggled by hidden chekbox toggler
+            </div><!--
+            --><label for="dialog-3-toggler" class="pcss-dialog-close">
+                ×
+            </label>
+        </div>
+
+        <div role="dialog" id="dialog-4" class="pcss-dialog pcss-dialog-top pcss-dialog-right"><!--
+            --><div class="pcss-dialog-content">
+                Dialog positioned to top right
+            </div><!--
+            --><a href="#!" class="pcss-dialog-close">
+                ×
+            </a>
+        </div>
+
+        <div role="dialog" id="dialog-5" class="pcss-dialog"><!--
+            --><div class="pcss-dialog-content">
+                <div style="height:1000px">
+                    "Tall" dialog
+                </div>                
+            </div><!--
+            --><a href="#!" class="pcss-dialog-close">
+                ×
+            </a>
+        </div>
+
+        <div role="dialog" id="dialog-6" class="pcss-dialog pcss-dialog-animated"><!--
+            --><div class="pcss-dialog-content">
+                Animated dialog
+            </div><!--
+            --><a href="#!" class="pcss-dialog-close">
+                ×
+            </a>
+        </div>
+
+        <div role="dialog" id="dialog-7" class="pcss-dialog"><!--
+            --><div class="pcss-dialog-content">
+                Dialog toggled with just a hint javascript
+            </div><!--
+            --><a href="#!" class="pcss-dialog-close">
+                ×
+            </a>
+        </div>
+    </body>
+</html>

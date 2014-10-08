@@ -1,0 +1,83 @@
+.pcss-dialog {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+  padding: 40px;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: transparent;
+  z-index: 999;
+}
+.pcss-dialog:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.pcss-dialog.pcss-dialog-top .pcss-dialog-close,
+.pcss-dialog.pcss-dialog-top .pcss-dialog-content {
+  vertical-align: top;
+}
+.pcss-dialog.pcss-dialog-bottom .pcss-dialog-close,
+.pcss-dialog.pcss-dialog-bottom .pcss-dialog-content {
+  vertical-align: bottom;
+}
+.pcss-dialog.pcss-dialog-left {
+  text-align: left;
+}
+.pcss-dialog.pcss-dialog-right {
+  text-align: right;
+}
+.pcss-dialog.pcss-modal {
+  pointer-events: auto;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.pcss-dialog .pcss-dialog-content {
+  pointer-events: auto;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  background: #ffffff;
+  position: relative;
+  white-space: normal;
+  text-align: left;
+  width: 600px;
+  padding: 20px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+.pcss-dialog .pcss-dialog-close {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 0;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: #fff;
+  pointer-events: auto;
+}
+.pcss-dialog.pcss-dialog-animated {
+  opacity: 0;
+  transition: opacity .5s ease, visibility 0 ease .5s;
+}
+.pcss-dialog:target,
+.pcss-dialog.pcss-dialog-visible,
+.pcss-dialog-toggler:checked + .pcss-dialog {
+  visibility: visible;
+}
+.pcss-dialog:target.pcss-dialog-animated,
+.pcss-dialog.pcss-dialog-visible.pcss-dialog-animated,
+.pcss-dialog-toggler:checked + .pcss-dialog.pcss-dialog-animated {
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+.pcss-dialog-toggler {
+  posiiton: absolute;
+  opacity: 0;
+}
