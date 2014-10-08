@@ -1,0 +1,4 @@
+pcss-dialog
+===========
+
+PureCSS Dialog
